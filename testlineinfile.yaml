@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  become_user : root
+  remote_user: root
+  gather_facts: false
+  tasks:
+    - name: install HAproxy load balancer server
+      lineinfile: dest=/etc/hosts line="{{ hostvars[" {{ item }} "]['ansible_eth1']['ipv4']['address'] }}   {{ hostvars[" {{ item }} "]['ansible_hostname'] }}"
+      with_items: groups['server_list']

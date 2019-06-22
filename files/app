@@ -1,0 +1,6 @@
+<VirtualHost *:80>
+DocumentRoot /var/www/app
+Options -Indexes
+ErrorLog /var/log/httpd/error.log
+TransferLog /var/log/httpd/access.log
+</VirtualHost>

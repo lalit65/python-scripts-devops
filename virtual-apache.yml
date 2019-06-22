@@ -1,0 +1,49 @@
+---
+- hosts: all
+  become: true
+  become_user : root
+  remote_user: root
+  gather_facts: false
+  tasks:
+    - name: install apache web server
+      yum:
+        pkg: httpd
+        state: present
+        update_cache: true
+    
+    - name: push default virtualhosts configuration
+      copy: 
+        src: files/app
+        dest: /etc/httpd/conf.d/app.conf
+        mode: 0644
+
+    - name: disable the default virtualhost
+      file:
+        dest: /etc/httpd/conf.d/default
+        state: absent
+      notify:
+        - restart apache
+
+    - name:  Deploy our awesome application
+      git:
+        repo: https://github.com/lalit790/apache.git
+        dest: /var/www/html
+      tags: deploy
+   
+    - name: testing config test
+      shell: systemctl status httpd
+      register: outfile
+    - debug: msg= "{{ outfile.stdout  }}"
+
+  
+    - name: testing when
+      command: touch /tmp/testy
+      when: outfile is failed
+
+
+
+  handlers:
+    - name: restart apache
+      service: 
+        name: httpd
+        state: restarted

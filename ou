@@ -1,0 +1,299 @@
+ansible-playbook 2.8.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible-playbook
+  python version = 2.7.5 (default, Apr  9 2019, 14:30:50) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /etc/ansible/hosts as it did not pass it's verify_file() method
+script declined parsing /etc/ansible/hosts as it did not pass it's verify_file() method
+auto declined parsing /etc/ansible/hosts as it did not pass it's verify_file() method
+Parsed /etc/ansible/hosts inventory source with ini plugin
+
+PLAYBOOK: virtual-apache-1.yml *************************************************************************************************************
+1 plays in virtual-apache-1.yml
+
+PLAY [all] *********************************************************************************************************************************
+META: ran handlers
+
+TASK [install apache web server] ***********************************************************************************************************
+task path: /etc/ansible/virtual-apache-1.yml:8
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+<10.128.0.13> (0, '/root\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110 `" && echo ansible-tmp-1561109164.24-104924781774110="` echo /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110 `" ) && sleep 0'"'"''
+<10.128.0.13> (0, 'ansible-tmp-1561109164.24-104924781774110=/root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110\n', '')
+<10.128.0.13> Attempting python interpreter discovery
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<10.128.0.13> (0, 'PLATFORM\nLinux\nFOUND\n/usr/bin/python\n/usr/bin/python2.7\n/usr/libexec/platform-python\n/usr/bin/python\nENDFOUND\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python && sleep 0'"'"''
+<10.128.0.13> (0, '{"osrelease_content": "NAME=\\"CentOS Linux\\"\\nVERSION=\\"7 (Core)\\"\\nID=\\"centos\\"\\nID_LIKE=\\"rhel fedora\\"\\nVERSION_ID=\\"7\\"\\nPRETTY_NAME=\\"CentOS Linux 7 (Core)\\"\\nANSI_COLOR=\\"0;31\\"\\nCPE_NAME=\\"cpe:/o:centos:centos:7\\"\\nHOME_URL=\\"https://www.centos.org/\\"\\nBUG_REPORT_URL=\\"https://bugs.centos.org/\\"\\n\\nCENTOS_MANTISBT_PROJECT=\\"CentOS-7\\"\\nCENTOS_MANTISBT_PROJECT_VERSION=\\"7\\"\\nREDHAT_SUPPORT_PRODUCT=\\"centos\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"7\\"\\n\\n", "platform_dist_result": ["centos", "7.6.1810", "Core"]}\n', '')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+<10.128.0.13> PUT /root/.ansible/tmp/ansible-local-17025X0WSeA/tmptnggFc TO /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_setup.py
+<10.128.0.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 '[10.128.0.13]'
+<10.128.0.13> (0, 'sftp> put /root/.ansible/tmp/ansible-local-17025X0WSeA/tmptnggFc /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_setup.py\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/ /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_setup.py && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 -tt 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_setup.py && sleep 0'"'"''
+<10.128.0.13> (0, '\r\n{"invocation": {"module_args": {"filter": "ansible_pkg_mgr", "gather_subset": ["!all"], "fact_path": "/etc/ansible/facts.d", "gather_timeout": 10}}, "ansible_facts": {"ansible_pkg_mgr": "yum"}}\r\n', 'Shared connection to 10.128.0.13 closed.\r\n')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+<10.128.0.13> PUT /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpcAtZjl TO /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_yum.py
+<10.128.0.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 '[10.128.0.13]'
+<10.128.0.13> (0, 'sftp> put /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpcAtZjl /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_yum.py\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/ /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_yum.py && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 -tt 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/AnsiballZ_yum.py && sleep 0'"'"''
+<10.128.0.13> (0, '\r\n{"msg": "", "invocation": {"module_args": {"lock_timeout": 0, "update_cache": true, "disable_excludes": null, "exclude": [], "allow_downgrade": false, "disable_gpg_check": false, "conf_file": null, "use_backend": "auto", "state": "present", "disablerepo": [], "releasever": null, "skip_broken": false, "autoremove": false, "download_dir": null, "enable_plugin": [], "installroot": "/", "install_weak_deps": true, "name": ["httpd"], "download_only": false, "bugfix": false, "list": null, "install_repoquery": true, "update_only": false, "disable_plugin": [], "enablerepo": [], "security": false, "validate_certs": true, "pkg": "httpd"}}, "changed": false, "results": ["httpd-2.4.6-89.el7.centos.x86_64 providing httpd is already installed"], "rc": 0}\r\n', 'Shared connection to 10.128.0.13 closed.\r\n')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1561109164.24-104924781774110/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+ok: [10.128.0.13] => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "autoremove": false, 
+            "bugfix": false, 
+            "conf_file": null, 
+            "disable_excludes": null, 
+            "disable_gpg_check": false, 
+            "disable_plugin": [], 
+            "disablerepo": [], 
+            "download_dir": null, 
+            "download_only": false, 
+            "enable_plugin": [], 
+            "enablerepo": [], 
+            "exclude": [], 
+            "install_repoquery": true, 
+            "install_weak_deps": true, 
+            "installroot": "/", 
+            "list": null, 
+            "lock_timeout": 0, 
+            "name": [
+                "httpd"
+            ], 
+            "pkg": "httpd", 
+            "releasever": null, 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": true, 
+            "update_only": false, 
+            "use_backend": "auto", 
+            "validate_certs": true
+        }
+    }, 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "httpd-2.4.6-89.el7.centos.x86_64 providing httpd is already installed"
+    ]
+}
+
+TASK [push default virtualhosts configuration] *********************************************************************************************
+task path: /etc/ansible/virtual-apache-1.yml:14
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+<10.128.0.13> (0, '/root\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746 `" && echo ansible-tmp-1561109165.95-271351360043746="` echo /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746 `" ) && sleep 0'"'"''
+<10.128.0.13> (0, 'ansible-tmp-1561109165.95-271351360043746=/root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746\n', '')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+<10.128.0.13> PUT /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpl0lSkm TO /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_stat.py
+<10.128.0.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 '[10.128.0.13]'
+<10.128.0.13> (0, 'sftp> put /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpl0lSkm /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_stat.py\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/ /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_stat.py && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 -tt 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_stat.py && sleep 0'"'"''
+<10.128.0.13> (0, '\r\n{"invocation": {"module_args": {"checksum_algorithm": "sha1", "get_checksum": true, "follow": false, "path": "/etc/httpd/conf.d/app.conf", "get_md5": null, "get_mime": true, "get_attributes": true}}, "stat": {"charset": "us-ascii", "uid": 0, "exists": true, "attr_flags": "", "woth": false, "isreg": true, "device_type": 0, "mtime": 1561107769.93982, "block_size": 4096, "inode": 8399959, "isgid": false, "size": 149, "executable": false, "isuid": false, "readable": true, "version": "357744697", "pw_name": "root", "gid": 0, "ischr": false, "wusr": true, "writeable": true, "mimetype": "text/plain", "blocks": 8, "xoth": false, "islnk": false, "nlink": 1, "issock": false, "rgrp": true, "gr_name": "root", "path": "/etc/httpd/conf.d/app.conf", "xusr": false, "atime": 1561107796.5230246, "isdir": false, "ctime": 1561107770.3178515, "isblk": false, "wgrp": false, "checksum": "6f8c8f727807d222b2a29357379d399a94c981a5", "dev": 2049, "roth": true, "isfifo": false, "mode": "0644", "xgrp": false, "rusr": true, "attributes": []}, "changed": false}\r\n', 'Shared connection to 10.128.0.13 closed.\r\n')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<10.128.0.13> PUT /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpPh1Bvl TO /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_file.py
+<10.128.0.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 '[10.128.0.13]'
+<10.128.0.13> (0, 'sftp> put /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpPh1Bvl /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_file.py\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/ /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_file.py && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 -tt 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/AnsiballZ_file.py && sleep 0'"'"''
+<10.128.0.13> (0, '\r\n{"group": "root", "uid": 0, "changed": false, "owner": "root", "state": "file", "gid": 0, "secontext": "system_u:object_r:httpd_config_t:s0", "mode": "0644", "path": "/etc/httpd/conf.d/app.conf", "invocation": {"module_args": {"directory_mode": null, "force": false, "remote_src": null, "_original_basename": "app", "path": "/etc/httpd/conf.d/app.conf", "owner": null, "follow": true, "group": null, "unsafe_writes": null, "setype": null, "content": null, "serole": null, "access_time": null, "state": "file", "dest": "/etc/httpd/conf.d/app.conf", "selevel": null, "access_time_format": "%Y%m%d%H%M.%S", "modification_time": null, "regexp": null, "src": null, "seuser": null, "recurse": false, "_diff_peek": null, "delimiter": null, "mode": 420, "modification_time_format": "%Y%m%d%H%M.%S", "attributes": null, "backup": null}}, "diff": {"after": {"path": "/etc/httpd/conf.d/app.conf"}, "before": {"path": "/etc/httpd/conf.d/app.conf"}}, "size": 149}\r\n', 'Shared connection to 10.128.0.13 closed.\r\n')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1561109165.95-271351360043746/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+ok: [10.128.0.13] => {
+    "changed": false, 
+    "checksum": "6f8c8f727807d222b2a29357379d399a94c981a5", 
+    "dest": "/etc/httpd/conf.d/app.conf", 
+    "diff": {
+        "after": {
+            "path": "/etc/httpd/conf.d/app.conf"
+        }, 
+        "before": {
+            "path": "/etc/httpd/conf.d/app.conf"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": "app", 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/etc/httpd/conf.d/app.conf", 
+            "directory_mode": null, 
+            "follow": true, 
+            "force": false, 
+            "group": null, 
+            "mode": 420, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "owner": null, 
+            "path": "/etc/httpd/conf.d/app.conf", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "file", 
+            "unsafe_writes": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/etc/httpd/conf.d/app.conf", 
+    "secontext": "system_u:object_r:httpd_config_t:s0", 
+    "size": 149, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [Check that our config is valid] ******************************************************************************************************
+task path: /etc/ansible/virtual-apache-1.yml:20
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+<10.128.0.13> (0, '/root\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208 `" && echo ansible-tmp-1561109166.83-103270457931208="` echo /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208 `" ) && sleep 0'"'"''
+<10.128.0.13> (0, 'ansible-tmp-1561109166.83-103270457931208=/root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208\n', '')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<10.128.0.13> PUT /root/.ansible/tmp/ansible-local-17025X0WSeA/tmposql8S TO /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208/AnsiballZ_command.py
+<10.128.0.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 '[10.128.0.13]'
+<10.128.0.13> (0, 'sftp> put /root/.ansible/tmp/ansible-local-17025X0WSeA/tmposql8S /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208/AnsiballZ_command.py\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208/ /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208/AnsiballZ_command.py && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 -tt 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208/AnsiballZ_command.py && sleep 0'"'"''
+<10.128.0.13> (0, '\r\n{"changed": true, "end": "2019-06-21 09:26:07.307778", "stdout": "", "cmd": ["httpd", "-t"], "rc": 0, "start": "2019-06-21 09:26:07.262760", "stderr": "AH00112: Warning: DocumentRoot [/var/www/app] does not exist\\nAH00558: httpd: Could not reliably determine the server\'s fully qualified domain name, using ansible-client.com. Set the \'ServerName\' directive globally to suppress this message\\nSyntax OK", "delta": "0:00:00.045018", "invocation": {"module_args": {"creates": null, "executable": null, "_uses_shell": false, "strip_empty_ends": true, "_raw_params": "httpd -t", "removes": null, "argv": null, "warn": true, "chdir": null, "stdin_add_newline": true, "stdin": null}}}\r\n', 'Shared connection to 10.128.0.13 closed.\r\n')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1561109166.83-103270457931208/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+changed: [10.128.0.13] => {
+    "changed": true, 
+    "cmd": [
+        "httpd", 
+        "-t"
+    ], 
+    "delta": "0:00:00.045018", 
+    "end": "2019-06-21 09:26:07.307778", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "httpd -t", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "rc": 0, 
+    "start": "2019-06-21 09:26:07.262760", 
+    "stderr": "AH00112: Warning: DocumentRoot [/var/www/app] does not exist\nAH00558: httpd: Could not reliably determine the server's fully qualified domain name, using ansible-client.com. Set the 'ServerName' directive globally to suppress this message\nSyntax OK", 
+    "stderr_lines": [
+        "AH00112: Warning: DocumentRoot [/var/www/app] does not exist", 
+        "AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using ansible-client.com. Set the 'ServerName' directive globally to suppress this message", 
+        "Syntax OK"
+    ], 
+    "stdout": "", 
+    "stdout_lines": []
+}
+
+TASK [Deactivates the default virtualhost] *************************************************************************************************
+task path: /etc/ansible/virtual-apache-1.yml:26
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+<10.128.0.13> (0, '/root\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774 `" && echo ansible-tmp-1561109167.38-90240028842774="` echo /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774 `" ) && sleep 0'"'"''
+<10.128.0.13> (0, 'ansible-tmp-1561109167.38-90240028842774=/root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774\n', '')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<10.128.0.13> PUT /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpL4QwEP TO /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774/AnsiballZ_command.py
+<10.128.0.13> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 '[10.128.0.13]'
+<10.128.0.13> (0, 'sftp> put /root/.ansible/tmp/ansible-local-17025X0WSeA/tmpL4QwEP /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774/AnsiballZ_command.py\n', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774/ /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774/AnsiballZ_command.py && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 -tt 10.128.0.13 '/bin/sh -c '"'"'/usr/bin/python /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774/AnsiballZ_command.py && sleep 0'"'"''
+<10.128.0.13> (1, '\r\n{"exception": "WARNING: The below traceback may *not* be related to the actual failure.\\n  File \\"/tmp/ansible_command_payload_s3mTgB/ansible_command_payload.zip/ansible/module_utils/basic.py\\", line 2561, in run_command\\n    cmd = subprocess.Popen(args, **kwargs)\\n  File \\"/usr/lib64/python2.7/subprocess.py\\", line 711, in __init__\\n    errread, errwrite)\\n  File \\"/usr/lib64/python2.7/subprocess.py\\", line 1327, in _execute_child\\n    raise child_exception\\n", "cmd": "a2dissite /etc/httpd/conf.d/default", "failed": true, "rc": 2, "invocation": {"module_args": {"creates": null, "executable": null, "_uses_shell": false, "strip_empty_ends": true, "_raw_params": "a2dissite /etc/httpd/conf.d/default", "removes": null, "argv": null, "warn": true, "chdir": null, "stdin_add_newline": true, "stdin": null}}, "msg": "[Errno 2] No such file or directory"}\r\n', 'Shared connection to 10.128.0.13 closed.\r\n')
+<10.128.0.13> Failed to connect to the host via ssh: Shared connection to 10.128.0.13 closed.
+<10.128.0.13> ESTABLISH SSH CONNECTION FOR USER: root
+<10.128.0.13> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/0c1bb3dfb4 10.128.0.13 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1561109167.38-90240028842774/ > /dev/null 2>&1 && sleep 0'"'"''
+<10.128.0.13> (0, '', '')
+The full traceback is:
+WARNING: The below traceback may *not* be related to the actual failure.
+  File "/tmp/ansible_command_payload_s3mTgB/ansible_command_payload.zip/ansible/module_utils/basic.py", line 2561, in run_command
+    cmd = subprocess.Popen(args, **kwargs)
+  File "/usr/lib64/python2.7/subprocess.py", line 711, in __init__
+    errread, errwrite)
+  File "/usr/lib64/python2.7/subprocess.py", line 1327, in _execute_child
+    raise child_exception
+fatal: [10.128.0.13]: FAILED! => {
+    "changed": false, 
+    "cmd": "a2dissite /etc/httpd/conf.d/default", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "a2dissite /etc/httpd/conf.d/default", 
+            "_uses_shell": false, 
+            "argv": null, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "stdin": null, 
+            "stdin_add_newline": true, 
+            "strip_empty_ends": true, 
+            "warn": true
+        }
+    }, 
+    "msg": "[Errno 2] No such file or directory", 
+    "rc": 2
+}
+
+PLAY RECAP *********************************************************************************************************************************
+10.128.0.13                : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

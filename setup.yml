@@ -1,0 +1,55 @@
+---
+- hosts: all
+  become: true
+  become_user : root
+  remote_user: root
+  gather_facts: false
+  tasks:
+
+    - name: wait for ssh to be setup
+      become: false
+      wait_for:
+        port: 22
+        delay: 5
+        connect_timeout: 5
+      delegate_to : ansible-client.com
+
+
+    - name: Install python
+      raw: yum update && yum install -y python
+
+
+    - name: creates destination directory
+      file:
+        state: directory
+        mode: 0700
+        dest: /root/destination
+
+
+    - name: pushes users home directory
+      copy:
+        src: /tmp/abc.txt
+        dest: /root
+        owner: root
+        mode: 0600
+      register: rsa
+     # ignore_erros: false 
+
+
+    - name: check if dns is prperly rsolvig or not
+      command: host -t A www.gogole.com
+      register: ns
+      #ignore_errors: true
+
+
+    - name: pushes new line in file
+      lineinfile:
+        regexp: "^nameserver"
+        line: "nameserver 8.8.8.8"
+        dest: /tmp/abc.conf
+      #when: ns is false
+    - name: Final greeting
+      pause:
+        seconds: 1
+        echo: false
+        prompt: "Don't worry about all the red above; if you made it here, your Vagrant VMs are probably fine !"

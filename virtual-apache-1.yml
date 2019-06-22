@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: true
+  become_user : root
+  remote_user: root
+  gather_facts: false
+  tasks:
+    - name: install apache web server
+      yum:
+        pkg: httpd
+        state: present
+        update_cache: true
+    
+    - name: push default virtualhosts configuration
+      copy: 
+        src: files/app
+        dest: /etc/httpd/conf.d/app.conf
+        mode: 0644
+
+    - name: Check that our config is valid
+      command: httpd -t 
+      register: result
+      ignore_errors: yes
+
+
+    - name: Deactivates the default virtualhost
+      command: a2dissite /etc/httpd/conf.d/default
+      notify:
+        - restart apache
+
+
+  handlers:
+    - name: restart apache
+      service: 
+        name: httpd
+        state: restarted

@@ -1,0 +1,13 @@
+--
+# Variables listed here are applicable to "mysql" roles
+ 
+mysql:
+  user: root
+  old_password: root
+  new_password: 123123
+  hosts:
+    - "{{ ansible_hostname }}"
+    - "127.0.0.1"
+    - "::1"
+    - "localhost"
+  privileges: "*.*:ALL,GRANT"
